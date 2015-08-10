@@ -106,6 +106,12 @@ class Plataforma extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        
+        public function dropdown()
+	{
+		$model = Plataforma::model()->findAll();
+		return CHtml::listData($model, 'Cod_Plat', 'Nombre_Plat');
+	}
 
 	/**
 	 * Returns the static model of the specified AR class.

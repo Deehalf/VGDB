@@ -100,6 +100,12 @@ class Compania extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        
+         public function dropdown()
+	{
+		$model = Compania::model()->findAll();
+		return CHtml::listData($model, 'Cod_Comp', 'Nombre_Comp');
+	}
 
 	/**
 	 * Returns the static model of the specified AR class.

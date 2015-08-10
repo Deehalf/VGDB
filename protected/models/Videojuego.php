@@ -46,10 +46,12 @@ class Videojuego extends CActiveRecord
 		return array(
 		        //array('Cod_vj', 'required'),
 			array('Cod_vj, Cod_Plat, Cod_Comp, Cod_Reg, Cod_ESRB, Num_Jugadores_Local, Num_Jugadores_Online', 'numerical', 'integerOnly'=>true),
+                        array(/*'Cod_vj,*/ 'Cod_Plat, Cod_Comp, Cod_Reg, Cod_ESRB, Num_Jugadores_Local, Num_Jugadores_Online', 'required'),
 			array('Num_Jugadores_Local, Num_Jugadores_Online','required'),
                         array('Nombre_vj', 'length', 'max'=>30),
                         array('Nombre_vj', 'required'),
 			array('DLC, Digital', 'length', 'max'=>2),
+                        array('DLC, Digital', 'required'),
 			array('Lanzamiento', 'length', 'max'=>10),
                         array('Lanzamiento', 'required'),
 			// The following rule is used by search().
@@ -81,13 +83,17 @@ class Videojuego extends CActiveRecord
 		return array(
 			'Cod_vj' => 'Numero',
 			'Nombre_vj' => 'Nombre',
-			'Cod_Plat' => 'Plataforma',
-			'Cod_Comp' => 'Compañia',
-			'Cod_Reg' => 'Región',
-			'Cod_ESRB' => 'ESRB',
+			//'Cod_Plat' => 'Plataforma',
+                        'Search_Plat' => 'Plataforma',
+			//'Cod_Comp' => 'Compañia',
+                        'Search_Comp' => 'Compañia',
+			//'Cod_Reg' => 'Región',
+                        'Search_Reg' => 'Región',
+			//'Cod_ESRB' => 'ESRB',
+                        'Search_ESRB' => 'ESRB',
 			'DLC' => 'DLC',
-			'Num_Jugadores_Local' => 'n° Jugadores Localmente',
-			'Num_Jugadores_Online' => 'n° Jugadores Online',
+			'Num_Jugadores_Local' => 'N° Jug. Localmente',
+			'Num_Jugadores_Online' => 'N° Jug. Online',
 			'Digital' => 'Versión Digital',
 			'Lanzamiento' => 'Lanzamiento',
 		);
@@ -110,26 +116,27 @@ class Videojuego extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-                $criteria->with = array('codPlat','codComp');
+                $criteria->with = array('codPlat','codComp','codReg','codESRB');
                 
                 
 		$criteria->compare('Cod_vj',$this->Cod_vj);
 		$criteria->compare('Nombre_vj',$this->Nombre_vj,true);
 		$criteria->compare('codPlat.Nombre_Plat',$this->Search_Plat,true);
 		$criteria->compare('codComp.Nombre_Comp',$this->Search_Comp,true);
-		$criteria->compare('Cod_Reg',$this->Search_Reg);
-		$criteria->compare('Cod_ESRB',$this->Search_ESRB);
+		$criteria->compare('codReg.Cod_Reg',$this->Search_Reg);
+		$criteria->compare('codESRB.Cod_ESRB',$this->Search_ESRB);
 		$criteria->compare('DLC',$this->DLC,true);
 		$criteria->compare('Num_Jugadores_Local',$this->Num_Jugadores_Local,true);
 		$criteria->compare('Num_Jugadores_Online',$this->Num_Jugadores_Online,true);
 		$criteria->compare('Digital',$this->Digital,true);
-		$criteria->compare('Lanzamiento',$this->Lanzamiento,true);
+		$criteria->compare('t.Lanzamiento',$this->Lanzamiento,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
-
+  
+       
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!

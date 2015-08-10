@@ -36,7 +36,7 @@ class VideojuegoController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','crearpdf'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -122,7 +122,7 @@ class VideojuegoController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Videojuego');
+		$dataProvider=new CActiveDataProvider('Videojuego', array('criteria' => array('order' => new CDbExpression('RAND()'))));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -143,6 +143,13 @@ class VideojuegoController extends Controller
 		));
 	}
         
+        public function actionCrearPdf($id){
+            $model = $this->loadModel($id);
+	$mPDF1 = Yii::app()->ePdf->mpdf();
+        $mPDF1->WriteHTML($this->render('view', array('model'=>$model), true));
+        $mPDF1->Output();
+}
+
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

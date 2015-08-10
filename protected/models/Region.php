@@ -97,6 +97,8 @@ class Region extends CActiveRecord
 		$model = Region::model()->findAll();
 		return CHtml::listData($model, 'Cod_Reg', 'Nombre_Reg');
 	}
+        
+        
 
 	/**
 	 * Returns the static model of the specified AR class.

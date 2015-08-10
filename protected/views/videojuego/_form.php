@@ -19,11 +19,11 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
+	<?php /*<div class="row">
 		<?php echo $form->labelEx($model,'Cod_vj'); ?>
 		<?php echo $form->textField($model,'Cod_vj'); ?>
 		<?php echo $form->error($model,'Cod_vj'); ?>
-	</div>
+	</div>*/; ?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Nombre_vj'); ?>
@@ -33,49 +33,49 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Cod_Plat'); ?>
-		<?php echo $form->textField($model,'Cod_Plat'); ?>
+		<?php echo $form->dropDownList($model,'Cod_Plat',Plataforma::dropdown(),array('empty'=>'Seleccione Plataforma')); ?>
 		<?php echo $form->error($model,'Cod_Plat'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Cod_Comp'); ?>
-		<?php echo $form->textField($model,'Cod_Comp'); ?>
+		<?php echo $form->dropDownList($model,'Cod_Comp',Compania::dropdown(),array('empty'=>'Seleccione Compañia')); ?>
 		<?php echo $form->error($model,'Cod_Comp'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Cod_Reg'); ?>
-		<?php echo $form->textField($model,'Cod_Reg'); ?>
+		<?php echo $form->dropDownList($model,'Cod_Reg',Region::dropdown(),array('empty'=>'Seleccione Región')); ?>
 		<?php echo $form->error($model,'Cod_Reg'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Cod_ESRB'); ?>
-		<?php echo $form->textField($model,'Cod_ESRB'); ?>
+		<?php echo $form->dropDownList($model,'Cod_ESRB',ESRB::dropdown(),array('empty'=>'Clasificación')); ?>
 		<?php echo $form->error($model,'Cod_ESRB'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'DLC'); ?>
-		<?php echo $form->textField($model,'DLC',array('size'=>2,'maxlength'=>2)); ?>
+		<?php echo $form->dropDownList($model,'DLC',array('Si' => 'Sí', 'No' => 'No')); ?>
 		<?php echo $form->error($model,'DLC'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Num_Jugadores_Local'); ?>
-		<?php echo $form->textField($model,'Num_Jugadores_Local'); ?>
+		<?php echo $form->dropDownList($model,'Num_Jugadores_Local',array('1' => '1','2' => '2', '3' => '3', '4' => '4', '>=5' => '5 o más')); ?>
 		<?php echo $form->error($model,'Num_Jugadores_Local'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Num_Jugadores_Online'); ?>
-		<?php echo $form->textField($model,'Num_Jugadores_Online'); ?>
+		<?php echo $form->dropdownList($model,'Num_Jugadores_Online',array('0' => 'Sin modo Online', '1' => '1','2' => '2', '3' => '3', '4' => '4', '>=5' => '5 o más')); ?>
 		<?php echo $form->error($model,'Num_Jugadores_Online'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Digital'); ?>
-		<?php echo $form->textField($model,'Digital',array('size'=>2,'maxlength'=>2)); ?>
+		<?php echo $form->dropDownList($model,'Digital',array('Si' => 'Sí', 'No' => 'No')); ?>
 		<?php echo $form->error($model,'Digital'); ?>
 	</div>
 

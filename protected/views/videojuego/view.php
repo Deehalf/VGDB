@@ -16,13 +16,13 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Videojuego #<?php echo $model->Cod_vj; ?></h1>
+<h1><?php echo $model->Nombre_vj; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'Cod_vj',
-		'Nombre_vj',
+		//'Cod_vj',
+		//'Nombre_vj',
             array(
                 'name'=>'Plataforma',
 		'value'=>$model->codPlat->Nombre_Plat,

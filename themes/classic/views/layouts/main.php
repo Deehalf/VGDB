@@ -88,10 +88,7 @@
                 <section>
                     <h4><span>Contact Us</span></h4>
                     <p>Deehalf<br>
-                        123456789 <br>
-                        Straya<br>
                         <strong>phone:</strong> <a href="tel:123456789" class="tele">123456789</a><br>
-                        <strong>fax:</strong> 123456789<br>
                         <span class="overflow"><strong>email:</strong> <a href="mailto:email@domain.com">email@companydomain.com</a></span> </p>
                 </section>
                 <!--close section-->
@@ -113,7 +110,6 @@
             <div class="span4">
                 <section>
                     <h4><span>Stay Updated</span></h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius.</p>
                         <form action="#" method="post">
                     <div class="input-append append-fix custom-append row-fluid">
                       <input type="email" class="span8" placeholder="Email Address" name="email">
@@ -124,19 +120,14 @@
                 </section>
                 <!--close section-->
             </div>
-            <!-- close .span5 -->
+            <!-- close .span5 --> 
 
             <!--section containing blog posts-->
             <div class="span4">
                 <section>
                     <h4><span>About Us</span></h4>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      Estudiantes de Ingenieria Civil Informatica Mención Computación de la UTEM
                     </p>
                 </section>
             </div>
