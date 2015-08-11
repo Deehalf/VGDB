@@ -146,7 +146,7 @@ class VideojuegoController extends Controller
         public function actionCrearPdf($id){
             $model = $this->loadModel($id);
 	$mPDF1 = Yii::app()->ePdf->mpdf();
-        $mPDF1->WriteHTML($this->render('view', array('model'=>$model), true));
+        $mPDF1->WriteHTML($this->render('pdf', array('model'=>$model), true));
         $mPDF1->Output();
 }
 

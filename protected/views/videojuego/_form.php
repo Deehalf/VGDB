@@ -27,7 +27,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Nombre_vj'); ?>
-		<?php echo $form->textField($model,'Nombre_vj',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->textField($model,'Nombre_vj',array('size'=>50,'maxlength'=>50)); ?>
 		<?php echo $form->error($model,'Nombre_vj'); ?>
 	</div>
 
@@ -63,13 +63,13 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Num_Jugadores_Local'); ?>
-		<?php echo $form->dropDownList($model,'Num_Jugadores_Local',array('1' => '1','2' => '2', '3' => '3', '4' => '4', '>=5' => '5 o más')); ?>
+		<?php echo $form->dropDownList($model,'Num_Jugadores_Local',array('0' => 'Solo jugable Online', '1' => '1','2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '8' => '8', '9' => '9 o más')); ?>
 		<?php echo $form->error($model,'Num_Jugadores_Local'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Num_Jugadores_Online'); ?>
-		<?php echo $form->dropdownList($model,'Num_Jugadores_Online',array('0' => 'Sin modo Online', '1' => '1','2' => '2', '3' => '3', '4' => '4', '>=5' => '5 o más')); ?>
+		<?php echo $form->dropdownList($model,'Num_Jugadores_Online',array('0' => 'Sin modo Online', '1' => '1','2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '8' => '8', '9' => '9 o más')); ?>
 		<?php echo $form->error($model,'Num_Jugadores_Online'); ?>
 	</div>
 
