@@ -27,16 +27,16 @@ class RegionController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
+			array('allow',  // Permite a todos los usuarios acceder a vistas "index" y "view"
 				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+			array('allow', // Permite a los usuarios registrados acceder a la vista "create"
+				'actions'=>array('create'),
 				'users'=>array('@'),
 			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+			array('allow', // Permite al administrador acceder a las vistas "admin","update" y "delete"
+				'actions'=>array('admin','delete','update'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users

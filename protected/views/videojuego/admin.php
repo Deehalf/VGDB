@@ -11,6 +11,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'List Videojuego', 'url'=>array('index')),
 	array('label'=>'Create Videojuego', 'url'=>array('create')),
+        array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -31,7 +32,7 @@ $('.search-form form').submit(function(){
 
 <p>
 Opcionalmente puede entrar un operador de comparación (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) al inicio de cada uno de sus valores de busqueda para especificar como se debe realizar la comparación.
+or <b>=</b>) al inicio de los valores de busqueda "numero" y "Lanzamiento" para especificar como se debe realizar la comparación.
 </p>
 
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>

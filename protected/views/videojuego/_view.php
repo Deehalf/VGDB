@@ -1,7 +1,7 @@
 <?php
 /* @var $this VideojuegoController */
 /* @var $data Videojuego */
-/* Esta vista corresponde a la apariencia principal de la lisat de Videojuegos */
+/* Esta vista corresponde a la apariencia principal de la lista de Videojuegos */
 ?>
 
 <div class="media">
@@ -10,7 +10,6 @@
         <h1 class="media-heading">
             <?php echo CHtml::link(CHtml::encode($data->Nombre_vj), array('view', 'id'=>$data->Cod_vj)); ?>
         </h1>
-        <?php  //Yap, el problema es que "$this" es una variable del tipo "VideoadfadfController. Esto es para los models!" ?>
 	<b><?php echo CHtml::encode($data->getAttributeLabel('Cod_Plat')); ?>:</b>
 	<?php echo CHtml::encode($data->codPlat->Nombre_Plat);  //La variable $data es instancia del modelo :3 ?>
 	<br />

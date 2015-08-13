@@ -13,6 +13,7 @@ $this->menu=array(
 	array('label'=>'Update Videojuego', 'url'=>array('update', 'id'=>$model->Cod_vj)),
 	array('label'=>'Delete Videojuego', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->Cod_vj),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Videojuego', 'url'=>array('admin')),
+        array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 );
 ?>
 
@@ -45,4 +46,18 @@ $this->menu=array(
 		'Digital',
 		'Lanzamiento',
 	),
+    
 )); ?>
+
+<?php $this->widget('zii.widgets.jui.CJuiButton',array(
+    'buttonType'=>'link',
+    'name'=>'btnSubmit',
+    'caption'=>' Generar PDF ',
+    'htmlOptions'=>array('class'=>'ui-button-primary'),
+    'url'=>array('crearpdf', 'id'=>$model->Cod_vj),
+    
+                            
+    ));
+
+?>
+

@@ -34,7 +34,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="<?php echo Yii::app()->baseUrl;?>/videojuego/admin.Deeh" rel="stylesheet">Buscador de Videojuegos</a>
+      <a class="brand" href="<?php echo Yii::app()->baseUrl;?>/videojuego/index.Deeh" rel="stylesheet">Buscador de Videojuegos</a>
 
 <!--/      <div class="nav-collapse collapse pull-right">
         <ul class="nav">

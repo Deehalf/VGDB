@@ -8,10 +8,6 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'videojuego-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
 )); ?>
 
@@ -19,16 +15,11 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<?php /*<div class="row">
-		<?php echo $form->labelEx($model,'Cod_vj'); ?>
-		<?php echo $form->textField($model,'Cod_vj'); ?>
-		<?php echo $form->error($model,'Cod_vj'); ?>
-	</div>*/; ?>
-
 	<div class="row">
 		<?php echo $form->labelEx($model,'Nombre_vj'); ?>
 		<?php echo $form->textField($model,'Nombre_vj',array('size'=>50,'maxlength'=>50)); ?>
 		<?php echo $form->error($model,'Nombre_vj'); ?>
+                <?php echo '<br>(Ingrese el Nombre del Videojuego)<br><br>'; ?>
 	</div>
 
 	<div class="row">
@@ -83,11 +74,24 @@
 		<?php echo $form->labelEx($model,'Lanzamiento'); ?>
 		<?php echo $form->textField($model,'Lanzamiento',array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'Lanzamiento'); ?>
+                <?php echo '<br>(Ingrese fecha en formato dd-mm-aaaa)<br><br>'; ?>
 	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
+        
+        <?php /*<div class="row">
+		<?php echo $form->labelEx($model,'Cod_vj'); ?>
+		<?php echo $form->textField($model,'Cod_vj'); ?>
+		<?php echo $form->error($model,'Cod_vj'); ?>
+         * 
+         * // Please note: When you enable ajax validation, make sure the corresponding
+	// controller action is handling ajax validation correctly.
+	// There is a call to performAjaxValidation() commented in generated controller code.
+	// See class documentation of CActiveForm for details on this.
+	</div>*/; ?>
+        
 
 <?php $this->endWidget(); ?>
 

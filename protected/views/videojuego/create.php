@@ -10,6 +10,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'List Videojuego', 'url'=>array('index')),
 	array('label'=>'Manage Videojuego', 'url'=>array('admin')),
+        array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 );
 ?>
 

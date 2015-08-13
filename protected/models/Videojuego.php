@@ -65,8 +65,6 @@ class Videojuego extends CActiveRecord
 	 */
 	public function relations()
 	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
 		return array(
 			'codPlat' => array(self::BELONGS_TO, 'Plataforma', 'Cod_Plat'),
 			'codComp' => array(self::BELONGS_TO, 'Compania', 'Cod_Comp'),
@@ -113,7 +111,7 @@ class Videojuego extends CActiveRecord
 	 */
 	public function search()
 	{
-		// @todo Please modify the following code to remove attributes that should not be searched.
+		
 
 		$criteria=new CDbCriteria;
                 $criteria->with = array('codPlat','codComp','codReg','codESRB');
